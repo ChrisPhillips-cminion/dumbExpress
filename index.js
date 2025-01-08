@@ -4,7 +4,7 @@ const app = express()
 const port = 3000
 const payload = require('./256KB.json')
 app.get('/', (req, res) => {
-  sleep.sleep(10)
+  sleep.sleep(1)
   res.send(payload)
 })
 
