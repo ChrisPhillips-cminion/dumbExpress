@@ -1,5 +1,5 @@
 const express = require('express')
-const express = require('sleep')
+const sleep = require('sleep')
 const app = express()
 const port = 3000
 const payload = require('./256KB.json')
