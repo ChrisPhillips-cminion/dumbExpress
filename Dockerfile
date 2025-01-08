@@ -5,8 +5,7 @@ RUN npm install -g express
 
 # make the 'app' folder the current working directory
 WORKDIR /app
-
-RUN adduser node root
+MKDIR /home/node/app
 COPY . /home/node/app
 WORKDIR /home/node/app
 
