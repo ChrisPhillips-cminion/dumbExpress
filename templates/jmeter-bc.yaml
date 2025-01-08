@@ -38,15 +38,14 @@ objects:
       resources: {}
       runPolicy: Serial
       source:
-        contextDir: ${GIT_CONTEXT_DIR}
         git:
           ref: main
-          uri: ${GIT_REPOSITORY}
+          uri: https://github.com/ChrisPhillips-cminion/dumbExpress
       strategy:
         dockerStrategy:
           from:
             kind: ImageStreamTag
-            name: ubi8-openjdk-11:1.3
+            name: node:lts-alpine
             namespace: openshift
         type: Dockerfile
       failedBuildsHistoryLimit: 2
@@ -58,14 +57,7 @@ parameters:
   - name: APPLICATION_NAME
     description: "The name of the Image stream (output)."
     required: false
-    value: "jmeter"
+    value: "dumbExpress"
   - name: APP_NAMESPACE
     description: "The namespace where the BuildConfig will be executed."
-    required: true
-  - name: GIT_CONTEXT_DIR
-    description: "The sub-directory where the source code for the application exists."
-    value: "container-image"
-    required: false
-  - name: GIT_REPOSITORY
-    description: "The uri of the source that will be built. It should contain a Dockerfile under GIT_CONTEXT_DIR"
     required: true

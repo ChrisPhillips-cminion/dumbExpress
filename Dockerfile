@@ -16,7 +16,7 @@ RUN npm install
 COPY . .
 
 # build app for production with minification
-RUN npm run build
+RUN npm install
 
 EXPOSE 3000
 CMD [ "node", "index.js"]
