@@ -7,10 +7,10 @@ const payload = require('./256KB.json')
 
 const nocache = require('nocache');
 
-app.use(nocache());
 
 
 app.get('/', (req, res) => {
+  res.set('Cache-Control', 'max-age=300, must-revalidate')
   sleep.sleep(1)
   res.send(payload)
 })
