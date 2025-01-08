@@ -3,6 +3,13 @@ const sleep = require('sleep')
 const app = express()
 const port = 3000
 const payload = require('./256KB.json')
+
+
+const nocache = require('nocache');
+
+app.use(nocache());
+
+
 app.get('/', (req, res) => {
   sleep.sleep(1)
   res.send(payload)
