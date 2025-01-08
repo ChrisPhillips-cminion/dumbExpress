@@ -4,7 +4,7 @@ WORKDIR /app
 
 
 # install simple http server for serving static content
-RUN npm install  express
+RUN npm install  express sleep
 
 # make the 'app' folder the current working directory
 
