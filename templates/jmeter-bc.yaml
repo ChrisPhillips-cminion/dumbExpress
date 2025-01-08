@@ -45,7 +45,7 @@ objects:
         dockerStrategy:
           from:
             kind: ImageStreamTag
-            name: node:lts-alpine
+            name: nodejs:latest
             namespace: openshift
         type: Dockerfile
       failedBuildsHistoryLimit: 2
