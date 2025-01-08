@@ -36,36 +36,7 @@ objects:
             name: ${APPLICATION_NAME}
             image: ""
             imagePullPolicy: Always
-            env:
-              - name: RUN_JMETER
-                value: "true"
-              - name: TEST_NAME
-                value: ${TEST_NAME}
-              - name: MEMORY_REQUEST
-                valueFrom:
-                  resourceFieldRef:
-                    containerName: ${APPLICATION_NAME}
-                    resource: requests.memory
-              - name: MEMORY_LIMIT
-                valueFrom:
-                  resourceFieldRef:
-                    containerName: ${APPLICATION_NAME}
-                    resource: limits.memory
 
-            resources:
-              limits:
-                # cpu: ${CPU_LIMIT}
-                memory: ${MEMORY_LIMIT}Mi
-              requests:
-                cpu: ${CPU_REQUEST}
-                memory: ${MEMORY_REQUEST}Mi
-            volumeMounts:
-              - name: app-config
-                mountPath: "${MOUNT_PATH}"
-        volumes:
-          - name: app-config
-            configMap:
-              name: ${APPLICATION_NAME}-config
     triggers:
     - type: ConfigChange
     - type: ImageChange
@@ -84,30 +55,7 @@ parameters:
   - name: APP_NAMESPACE
     description: "The namespace of the application."
     required: true
-  - name: MOUNT_PATH
-    description: "The path where the configuration file of the application is mounted."
-    value: "/opt/jmeter/tests/"
-    required: true
-  - description: Sets the initial memory request in Mi for the application.
-    displayName: Memory Request
-    name: MEMORY_REQUEST
-    value: "512"
-  - description: Sets the memory limit in Mi, available to the application.
-    displayName: Memory Limit
-    name: MEMORY_LIMIT
-    value: "2048"
-  - description: Sets the initial CPU request for the application.
-    displayName: CPU Request
-    name: CPU_REQUEST
-    value: "0.5"
-  - description: Sets the CPU limit, available to the application.
-    displayName: CPU Limit
-    name: CPU_LIMIT
-    value: "2.0"
-  - description: Name of the test that will be executed.
-    displayName: Test Name
-    name: TEST_NAME
-    required: true
+
   # - description: Number of instances to run
   #   displayName: Replica
   #   name: REPLICAS
