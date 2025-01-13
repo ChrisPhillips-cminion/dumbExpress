@@ -2,13 +2,13 @@ const express = require('express')
 const sleep = require('sleep')
 const app = express()
 const port = 3000
-const payload = require('./256KB.json')
+const payload = require('./9B.json')
 
 
 
 app.get('/', (req, res) => {
-  res.set('Cache-Control', 'max-age=300, must-revalidate')
-  sleep.sleep(5)
+  sleep.msleep(50);
+  // res.set('Cache-Control', 'max-age=300, must-revalidate')
   res.send(payload)
 })
 
