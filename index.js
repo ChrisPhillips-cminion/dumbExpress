@@ -7,7 +7,7 @@ const payload = require('./9B.json')
 
 
 app.get('/', (req, res) => {
-  sleep.msleep(50);
+  sleep.msleep(500);
   // res.set('Cache-Control', 'max-age=300, must-revalidate')
   res.send(payload)
 })
