@@ -7,20 +7,14 @@ const app = express()
 const port = 3000
 
 const p0 = ""
-const p1 = require('./9B.json')
-const p2 = require('./9B.json')
-const p3 = require('./9B.json')
-const p4 = require('./9B.json')
-const p5 = require('./9B.json')
-const p6 = require('./9B.json')
-const p7 = require('./9B.json')
+
 
 app.post('/', (req, res) => {
-  let randNo = Math.random() * 7074;
-  let no = Math.floor(randNo)
-  console.log(no,randNo)
+  // let randNo = Math.random() * 7074;
+  // let no = Math.floor(randNo)
+  // console.log(no,randNo)
   let resp = "unset";
-  resp = buildXML(lookup[no]);
+  resp = buildXML("293784");
   sleep.msleep("1000")
 
 
