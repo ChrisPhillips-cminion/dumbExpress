@@ -15,6 +15,18 @@ const p5 = require('./9B.json')
 const p6 = require('./9B.json')
 const p7 = require('./9B.json')
 
+app.post('/', (req, res) => {
+  let randNo = Math.random() * 7074;
+  let no = Math.floor(randNo)
+  console.log(no,randNo)
+  let resp = "unset";
+  resp = buildXML(lookup[no]);
+  sleep.msleep("40")
+
+
+  // res.set('Cache-Control', 'max-age=300, must-revalidate')
+  res.send(resp)
+})
 
 
 app.get('/', (req, res) => {
