@@ -21,7 +21,7 @@ app.post('/', (req, res) => {
   console.log(no,randNo)
   let resp = "unset";
   resp = buildXML(lookup[no]);
-  sleep.msleep("40")
+  sleep.msleep("1000")
 
 
   // res.set('Cache-Control', 'max-age=300, must-revalidate')
