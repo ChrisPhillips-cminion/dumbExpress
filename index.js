@@ -9,6 +9,21 @@ const port = 3000
 const p0 = ""
 
 
+app.get('/', (req, res) => {
+   let randNo = Math.random() * 70740000000;
+  // let no = Math.floor(randNo)
+  console.log(randNo)
+  let key = randNo
+  
+  let resp = "unset";
+  resp = {}
+for (let jj = 0 ;jj < 10000; jj++ ) {
+resp["TEST"+jj+key] = "DONE-key-"+jj
+}
+  sleep.msleep("50")
+  res.send(resp)
+})
+
 app.post('/', (req, res) => {
    let randNo = Math.random() * 70740000000;
   // let no = Math.floor(randNo)
@@ -17,7 +32,7 @@ app.post('/', (req, res) => {
   
   let resp = "unset";
   resp = {}
-for (let jj = 0 ;jj < 20000; jj++ ) {
+for (let jj = 0 ;jj < 10000; jj++ ) {
 resp["TEST"+jj+key] = "DONE-key-"+jj
 }
   sleep.msleep("50")
@@ -25,11 +40,6 @@ resp["TEST"+jj+key] = "DONE-key-"+jj
 })
 
 
-app.get('/', (req, res) => {
-  let resp = { "TEST":"DONE" };
-  sleep.msleep("50")
-  res.send(resp)
-})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
