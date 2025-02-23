@@ -17,8 +17,8 @@ app.post('/', (req, res) => {
   
   let resp = "unset";
   resp = {}
-for (let jj = 0 ;jj < 20000; j++ ) {
-resp["TEST"+jj+key] = "DONE-key-jj"
+for (let jj = 0 ;jj < 20000; jj++ ) {
+resp["TEST"+jj+key] = "DONE-key-"+jj
 }
   sleep.msleep("50")
   res.send(resp)
