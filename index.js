@@ -10,9 +10,9 @@ const p0 = ""
 
 
 app.post('/', (req, res) => {
-   let randNo = Math.random() * 7074;
+   let randNo = Math.random() * 70740000000;
   // let no = Math.floor(randNo)
-  // console.log(no,randNo)
+  console.log(randNo)
   let key = randNo
   
   let resp = "unset";
